@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -22,16 +22,18 @@ function ThemeToggle() {
       </Button>
     );
   }
+  const currentTheme = resolvedTheme || 'light';
+
   return (
     <Button
       variant="ghost"
       size="icon"
       className="relative h-8 w-8 overflow-visible"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
       title="Toggle theme"
     >
       <AnimatePresence initial={false} mode="wait">
-        {theme === 'dark' ? (
+        {currentTheme === 'dark' ? (
           <motion.div
             key="sun"
             initial={{ opacity: 0, rotate: -45 }}
