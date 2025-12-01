@@ -353,7 +353,7 @@ function handleMode(args: string[]): string {
       fmt.subtitle('  • terminal') + ' - Terminal interface',
       fmt.subtitle('  • classic') + '  - Classic portfolio view',
       '',
-      fmt.dim('Usage: mode [terminal|classic]'),
+      fmt.dim('Usage: mode [terminal | classic]'),
     ];
     return lines.join('\n');
   }
@@ -381,7 +381,7 @@ function handleTheme(args: string[]): string {
       fmt.subtitle('  • dark  - Dark theme'),
       fmt.subtitle('  • light - Light theme'),
       '',
-      fmt.dim('Usage: theme [dark|light]'),
+      fmt.dim('Usage: theme [dark | light]'),
     ];
     return lines.join('\n');
   }
