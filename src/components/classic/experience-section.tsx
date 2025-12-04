@@ -5,7 +5,6 @@ import { Card } from '@/components/ui/card';
 import { experienceConfig } from '@/config/experience';
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
-import { BorderBeam } from '../ui/border-beam';
 
 export default function ExperienceSection() {
   return (
@@ -102,7 +101,6 @@ export default function ExperienceSection() {
                       </Badge>
                     ))}
                   </div>
-                  <BorderBeam duration={5 + index} delay={index} />
                 </Card>
               </motion.div>
             ))}
