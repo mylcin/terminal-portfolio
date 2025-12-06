@@ -15,7 +15,7 @@ export const contactConfig: Contact = {
   timezone: 'GMT+3',
   social: {
     github: 'https://github.com/mylcin',
-    linkedin: 'https://linkedin.com/in/mylcin',
+    linkedin: 'https://linkedin.com/in/mustfylcin',
     instagram: 'https://instagram.com/mustfylcin',
   },
 } as const;
