@@ -1,17 +1,17 @@
 'use client';
 
-import AboutSection from '@/components/classic/about-section';
-import BlogSection from '@/components/classic/blog-section';
-import CertificationsSection from '@/components/classic/certifications-section';
-import EducationSection from '@/components/classic/education-section';
-import ExperienceSection from '@/components/classic/experience-section';
-import Footer from '@/components/classic/footer';
-import Hero from '@/components/classic/hero';
-import ProjectsSection from '@/components/classic/projects-section';
-import SkillsSection from '@/components/classic/skills-section';
-import ModeToggle from '@/components/shared/mode-toggle';
-import Terminal from '@/components/terminal/terminal';
-import { useTerminalStore } from '@/store/terminal-store';
+import AboutSection from '@/features/classic/components/about-section';
+import BlogSection from '@/features/classic/components/blog-section';
+import CertificationsSection from '@/features/classic/components/certifications-section';
+import EducationSection from '@/features/classic/components/education-section';
+import ExperienceSection from '@/features/classic/components/experience-section';
+import Footer from '@/features/classic/components/footer';
+import Hero from '@/features/classic/components/hero';
+import ProjectsSection from '@/features/classic/components/projects-section';
+import SkillsSection from '@/features/classic/components/skills-section';
+import ModeToggle from '@/shared/components/mode-toggle';
+import Terminal from '@/features/terminal/components/terminal';
+import { useTerminalStore } from '@/features/terminal/store/terminal-store';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 

@@ -1,29 +1,37 @@
 # Terminal Portfolio
 
-A modern, interactive developer portfolio with a unique terminal interface and classic view mode.
+A modern, interactive developer portfolio featuring a unique terminal interface alongside a classic view mode. Built with Next.js 16, TypeScript, and a feature-based architecture.
 
-## 🚀 Features
+---
 
-- **Dual Interface**: Switch between Terminal and Classic modes
-- **Interactive Terminal**: Linux-like command system
-- **Blog System**: MDX-powered blog with syntax highlighting
-- **Fully Typed**: TypeScript for type safety
-- **Responsive**: Mobile-first design
-- **Dark Mode**: Built-in theme switching
-- **SEO Friendly**: Optimized metadata and structure
+## Features
 
-## 🛠️ Tech Stack
+- **Dual Interface** — Seamless switching between Terminal and Classic modes
+- **Interactive Terminal** — Linux-like command system with autocomplete, history, and tab completion
+- **Blog System** — MDX-powered blog with syntax highlighting, filtering, and pagination
+- **Fully Typed** — End-to-end TypeScript for type safety
+- **Responsive** — Mobile-first design with adaptive layouts
+- **Dark Mode** — Built-in theme switching with system preference detection
+- **SEO Friendly** — Optimized metadata, Open Graph, and semantic structure
 
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui
-- **Animations**: Framer Motion
-- **Blog**: Contentlayer + MDX
-- **State Management**: Zustand
-- **Code Quality**: ESLint + Prettier + Husky
-- **Deployment**: Vercel
+---
 
-## 📦 Installation
+## Tech Stack
+
+| Category           | Technology                    |
+|--------------------|-------------------------------|
+| Framework          | Next.js 16 (App Router)       |
+| Language           | TypeScript                    |
+| Styling            | Tailwind CSS + shadcn/ui      |
+| Animations         | Framer Motion                 |
+| Blog               | Contentlayer + MDX            |
+| State Management   | Zustand                       |
+| Code Quality       | ESLint + Prettier + Husky     |
+| Deployment         | Vercel                        |
+
+---
+
+## Installation
 
 ```bash
 # Clone repository
@@ -43,30 +51,34 @@ cp .env.local.example .env.local
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-## 🎯 Terminal Commands
+---
 
-```bash
-help              # Display all available commands
-echo              # Print text to terminal
-about             # Learn more about me
-experience        # View work experience
-projects          # See my projects
-skills            # View technical skills
-education         # Display educational background
-certifications    # List certifications
-contact           # Get contact information
-blog              # Read blog posts
-social            # View social media links
-resume            # Download resume
-clear             # Clear terminal
-ascii             # Display ASCII art
-mode [type]       # Change mode (terminal/classic)
-theme [type]      # Change theme (dark/light)
-```
+## Terminal Commands
 
-## 📝 Blog Posts
+| Command           | Description                        |
+|--------------------|------------------------------------|
+| `help`             | Display all available commands     |
+| `echo`             | Print text to terminal             |
+| `about`            | Learn more about me                |
+| `experience`       | View work experience               |
+| `projects`         | See my projects                    |
+| `skills`           | View technical skills              |
+| `education`        | Display educational background     |
+| `certifications`   | List certifications                |
+| `contact`          | Get contact information            |
+| `blog`             | Read blog posts                    |
+| `social`           | View social media links            |
+| `resume`           | Download resume                    |
+| `clear`            | Clear terminal                     |
+| `ascii`            | Display ASCII art                  |
+| `mode [type]`      | Change mode (terminal/classic)     |
+| `theme [type]`     | Change theme (dark/light)          |
+
+---
+
+## Blog Posts
 
 Blog posts are written in MDX and stored in `content/blog/`.
 
@@ -80,145 +92,77 @@ description: "Post description"
 date: "2024-01-01"
 published: true
 tags: ["nextjs", "react"]
-author: 'Mustafa Yalçın'
+author: 'Mustafa Yalcin'
 ---
 
 Your content here...
 ```
 
-## 🎨 Customization
+---
 
-### 1. Update Personal Info
+## Project Structure
 
-Edit configuration files in `src/config/`:
-- `about.ts` - About information
-- `ascii.ts` - ASCII configuration
-- `certifications.ts` - Certifications
-- `commands.ts` - Terminal commands
-- `contact.ts`- Contact information
-- `education.ts` - Education
-- `experience.ts` - Work experience
-- `projects.ts` - Projects
-- `site.ts` - Site metadata
-- `skills.ts` - Skills
-
-### 2. Customize Colors
-
-Edit `src/app/globals.css` to change color scheme:
-
-```css
-:root {
-  --primary: 222.2 47.4% 11.2%;
-  /* ... */
-}
-```
-
-### 3. Add shadcn/ui Components
-
-```bash
-npx shadcn@latest add [component-name]
-```
-
-## 📂 Project Structure
+The project follows a **feature-based architecture** where each domain feature encapsulates its own components, logic, configuration, and types.
 
 ```
 terminal-portfolio/
-├── content/           # Blog posts (MDX)
-├── public/            # Static files
+├── content/                       # Blog posts (MDX)
+├── public/                        # Static files
 ├── src/
-│   ├── app/           # Next.js app directory
-│   ├── components/    # React components
-│   │   ├── blog/      # Blog components
-│   │   ├── classic/   # Classic mode components
-│   │   └── shared/    # Shared components
-│   │   ├── terminal/  # Terminal components
-│   │   ├── ui/        # shadcn/ui components
-│   ├── config/        # Configuration files
-│   ├── lib/           # Utilities
-│   ├── store/         # Zustand stores
-│   └── types/         # TypeScript types
-├── .contentlayer/     # Generated by Contentlayer
+│   ├── app/                       # Next.js App Router
+│   │   ├── blog/
+│   │   │   ├── [slug]/page.tsx    # Blog detail page
+│   │   │   └── page.tsx           # Blog listing page
+│   │   ├── globals.css            # Global styles & design tokens
+│   │   ├── layout.tsx             # Root layout
+│   │   └── page.tsx               # Home page
+│   │
+│   ├── features/                  # Feature modules
+│   │   ├── terminal/              # Terminal feature
+│   │   │   ├── components/        # Terminal UI components
+│   │   │   ├── lib/               # Command execution, parser, formatter
+│   │   │   ├── store/             # Zustand terminal store
+│   │   │   ├── config/            # Commands & ASCII config
+│   │   │   └── types/             # Terminal type definitions
+│   │   │
+│   │   ├── blog/                  # Blog feature
+│   │   │   ├── components/        # Blog UI + MDX renderer
+│   │   │   ├── lib/               # Blog utilities
+│   │   │   └── types/             # Blog type definitions
+│   │   │
+│   │   └── classic/               # Classic portfolio mode
+│   │       └── components/        # Section components (hero, about, etc.)
+│   │
+│   └── shared/                    # Cross-feature shared code
+│       ├── components/            # Mode toggle, theme toggle, providers
+│       ├── ui/                    # shadcn/ui primitives
+│       ├── lib/                   # Utilities (cn, formatDate, storage)
+│       └── config/                # Personal info configs (about, skills, etc.)
+│
+├── .contentlayer/                 # Generated by Contentlayer
 └── ...
 ```
 
-## 🚀 Deployment
+---
+
+## Deployment
 
 ### Environment Variables
 
 Set these in your Vercel dashboard:
+
 ```bash
 NEXT_PUBLIC_SITE_URL='localhost:3000'
 ```
 
-## 🔧 Scripts
+---
 
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run lint:fix     # Fix ESLint errors
-npm run format       # Format with Prettier
-npm run type-check   # Check TypeScript types
-```
+## Contributing
 
-## 📖 Development Guidelines
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Code Style
+---
 
-- Use functional components with hooks
-- Follow ESLint and Prettier rules
-- Write meaningful commit messages
-- Keep components small and focused
-- Use TypeScript strictly
+## License
 
-### Git Workflow
-
-```bash
-# Commits are automatically linted via Husky
-git add .
-git commit -m "feat: add new feature"
-git push
-```
-
-### Adding New Commands
-
-1. Define command in `src/config/commands.ts`
-2. Implement handler in `src/lib/commands.ts`
-3. Update types if needed
-
-### Adding New Sections
-
-1. Create component in `src/components/classic/`
-2. Add to `src/app/page.tsx`
-3. Style with Tailwind CSS
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. ⭐️ If you find this useful, please give it a star!
-
-## 📄 License
-
-MIT License - feel free to use this project for your portfolio!
-
-## Troubleshooting
-
-### Issue: Contentlayer build fails
-- Delete .contentlayer folder and run build again
-- Use Webpack instead of Turbopack
-```bash
-rm -rf .contentlayer
-npm run build
-```
-
-### Issue: Zustand hydration mismatch
-- Ensure client-side only rendering for terminal
-- Check `mounted` state in components
-
-## Support
-
-For issues or questions:
-- Open an issue on GitHub
-- Check existing documentation
-- Review Next.js 16 documentation
-
+MIT License — feel free to use this project for your portfolio!

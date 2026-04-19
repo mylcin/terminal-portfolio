@@ -1,8 +1,8 @@
-import BlogHeader from '@/components/blog/blog-header';
-import MDXContent from '@/components/shared/mdx-content';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { calculateReadingTime, formatDate } from '@/lib/utils';
+import BlogHeader from '@/features/blog/components/blog-header';
+import MDXContent from '@/features/blog/components/mdx-content';
+import { Badge } from '@/shared/ui/badge';
+import { Button } from '@/shared/ui/button';
+import { calculateReadingTime, formatDate } from '@/shared/lib/utils';
 import type { Post } from 'contentlayer/generated';
 import { allPosts } from 'contentlayer/generated';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';

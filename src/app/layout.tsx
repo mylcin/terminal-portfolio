@@ -1,5 +1,5 @@
-import Providers from '@/components/shared/providers';
-import { siteConfig } from '@/config/site';
+import Providers from '@/shared/components/providers';
+import { siteConfig } from '@/shared/config/site';
 import type { Metadata } from 'next';
 import { Inter, Source_Code_Pro } from 'next/font/google';
 import './globals.css';

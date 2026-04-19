@@ -1,10 +1,10 @@
-import BlogContent from '@/components/blog/blog-content';
-import BlogHeader from '@/components/blog/blog-header';
+import BlogContent from '@/features/blog/components/blog-content';
+import BlogHeader from '@/features/blog/components/blog-header';
 import {
   filterPublishedPosts,
   getAllTags,
   sortPostsByDate,
-} from '@/lib/blog-utils';
+} from '@/features/blog/lib/blog-utils';
 import type { Post } from 'contentlayer/generated';
 import { allPosts } from 'contentlayer/generated';
 import { Metadata } from 'next';
